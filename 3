@@ -1,4 +1,55 @@
 3-2
+str_1 = input("请输入：")
+sum_1 = 0
+for key in str_1:
+        sum_1 = sum_1+1
+print(sum_1)
+
+
 3-3
+str = input("输入一个字符串：")
+A = ""
+B = ""
+for i in str[::2]:   # shaung
+    A += i
+for j in str[1::2]:  #dan
+    B += j
+C = A + B
+print(C)
+
+
 3-4
+str = []
+def count():
+    mystr = input("请输入只包含字母的字符串：")
+    if mystr.isalpha():
+        newstr = mystr.lower()  # guiyi
+        for s in newstr:
+            str.append(s)  # fangru s
+        ss = {} 
+        for i in str:
+            if str.count(i) >= 1:
+                ss[i] = str.count(i)
+        print(ss)
+    else:
+        print("输入的内容错误")
+count()
+
+
+
 3-5
+d={}
+i = 0
+while i < 3:
+    id = input("输入学号：")
+    name = input("输入名字：")
+    d.__setitem__(id, name)
+    i += 1
+print("排序前：%s"%d)
+def dictTolist(d:dict):   # zhuanhuashunxu
+    key = d.keys()
+    value = d.values()
+    list = [(K,V) for K,V in zip(key, value)]
+    return list
+new = sorted(dictTolist(d), key=lambda x:x[0], reverse=False)   
+print("排序后：%s"%new)
